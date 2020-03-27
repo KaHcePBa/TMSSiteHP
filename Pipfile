@@ -8,3 +8,4 @@ black = "==19.10b0"
 
 [packages]
 django = "*"
+tree = "*"
