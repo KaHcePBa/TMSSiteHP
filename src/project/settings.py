@@ -25,7 +25,11 @@ SECRET_KEY = '7qyg2&dyns4-cx-$jo5%5r93#$%$s%226$@vi+w^o543a^iy%-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "sakasper.herokuapp.com",
+]
 
 
 # Application definition
