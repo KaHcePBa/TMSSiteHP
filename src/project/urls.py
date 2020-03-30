@@ -38,7 +38,7 @@ def view_image(r):
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # объект который стоит перед круглой скобкой мы пытаемся вызвать, в д.сл. path
     path('', view_index),
     path('resume/', view_resume),
     path('projects/', view_projects),
