@@ -1,15 +1,18 @@
 from pathlib import Path
 
 from django.contrib import admin
+from django.conf import settings
 from django.http import HttpResponse
 from django.urls import path
 
 here = Path(__file__).parent.resolve()
 
+HTML_INDEX: Path = settings.REPO_DIR / "index.html"
 
-def view_index(r):
-    index = here.parent.parent / "index.html"
-    with index.open() as src:
+
+def view_index(*_args, **_kwargs):
+    # HTML_INDEX = here.parent.parent / "index.html"
+    with HTML_INDEX.open() as src:
         return HttpResponse(src.read())
 
 
@@ -38,7 +41,7 @@ def view_image(r):
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls), # объект который стоит перед круглой скобкой мы пытаемся вызвать, в д.сл. path
+    path('admin/', admin.site.urls),  # объект который стоит перед круглой скобкой мы пытаемся вызвать, в д.сл. path
     path('', view_index),
     path('resume/', view_resume),
     path('projects/', view_projects),
