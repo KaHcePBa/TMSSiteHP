@@ -1,17 +1,18 @@
 from pathlib import Path
 
 from django.contrib import admin
-from django.conf import settings
+# from django.conf import settings
 from django.http import HttpResponse
 from django.urls import path
 
 here = Path(__file__).parent.resolve()
 
-HTML_INDEX: Path = settings.REPO_DIR / "index.html"
+# PRO_DIR:
+# HTML_INDEX: Path = settings.REPO_DIR / "index.html"
 
 
-def view_index(*_args, **_kwargs):
-    # HTML_INDEX = here.parent.parent / "index.html"
+def view_index(r):
+    HTML_INDEX = here.parent.parent / "index.html"
     with HTML_INDEX.open() as src:
         return HttpResponse(src.read())
 
