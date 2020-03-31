@@ -39,6 +39,12 @@ def view_image(r):
     jpg_me = here.parent.parent / "images/me.jpg"
     with jpg_me.open("rb") as src:
         return HttpResponse(src.read(), content_type="image/jpeg")
+#
+#
+# def view_css(r):
+#     css_style = here.parent.parent / "css/style.css"
+#     with css_style.open() as src:
+#         return HttpResponse(src.read(), content_type="text/css")
 
 
 urlpatterns = [
@@ -47,5 +53,6 @@ urlpatterns = [
     path('resume/', view_resume),
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
-    path('me/', view_image)
+    path('me/', view_image),
+    # path('style/', view_css)
 ]
