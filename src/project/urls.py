@@ -1,14 +1,10 @@
 from pathlib import Path
 
 from django.contrib import admin
-# from django.conf import settings
 from django.http import HttpResponse
 from django.urls import path
 
 here = Path(__file__).parent.resolve()
-
-# PRO_DIR:
-# HTML_INDEX: Path = settings.REPO_DIR / "index.html"
 
 
 def view_index(r):
@@ -18,33 +14,27 @@ def view_index(r):
 
 
 def view_resume(r):
-    resume = here.parent.parent / "resume.html"
-    with resume.open() as src:
+    HTML_RESUME = here.parent.parent / "resume.html"
+    with HTML_RESUME.open() as src:
         return HttpResponse(src.read())
 
 
 def view_projects(r):
-    projects = here.parent.parent / "projects.html"
-    with projects.open() as src:
+    HTML_PROJECTS = here.parent.parent / "projects.html"
+    with HTML_PROJECTS.open() as src:
         return HttpResponse(src.read())
 
 
 def view_thoughts(r):
-    thoughts = here.parent.parent / "thoughts.html"
-    with thoughts.open() as src:
+    HTML_THOUGHTS = here.parent.parent / "thoughts.html"
+    with HTML_THOUGHTS.open() as src:
         return HttpResponse(src.read())
 
 
 def view_image(r):
-    jpg_me = here.parent.parent / "images/me.jpg"
-    with jpg_me.open("rb") as src:
+    JPG_ME = here.parent.parent / "images/me.jpg"
+    with JPG_ME.open("rb") as src:
         return HttpResponse(src.read(), content_type="image/jpeg")
-#
-#
-# def view_css(r):
-#     css_style = here.parent.parent / "css/style.css"
-#     with css_style.open() as src:
-#         return HttpResponse(src.read(), content_type="text/css")
 
 
 urlpatterns = [
@@ -54,5 +44,4 @@ urlpatterns = [
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
     path('me/', view_image),
-    # path('style/', view_css)
 ]
