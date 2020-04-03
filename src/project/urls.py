@@ -15,47 +15,57 @@ HTML_PROJECTS: Path = here.parent.parent / "projects.html"
 HTML_THOUGHTS: Path = here.parent.parent / "thoughts.html"
 JPG_ME: Path = here.parent.parent / "images/me.jpg"
 
-# args = HTML_INDEX, HTML_RESUME, HTML_PROJECTS, HTML_THOUGHTS
 
-
-# kwargs = dict(JPG_ME)
-
-
-# def read_static(r):
-#     with args.open() as src:
-#         return HttpResponse(src.read())
-
-
-# with kwargs.open("rb"):
-#     return HttpResponse(kwargs.read(), content_type="image/jpeg")
-
-# def view_static(r):
-#     return read_static(r)
+def read_static(fn, ct):
+    with open(fn, "rb") as src:
+        content = src.read()
+        resp = HttpResponse(content, content_type=ct)
+        return resp
 
 
 def view_index(r):
-    with HTML_INDEX.open() as src:
-        return HttpResponse(src.read())
+    return read_static(HTML_INDEX, "text/html")
 
 
 def view_resume(r):
-    with HTML_RESUME.open() as src:
-        return HttpResponse(src.read())
+    return read_static(HTML_RESUME, "text/html")
 
 
 def view_projects(r):
-    with HTML_PROJECTS.open() as src:
-        return HttpResponse(src.read())
+    return read_static(HTML_PROJECTS, "text/html")
 
 
 def view_thoughts(r):
-    with HTML_THOUGHTS.open() as src:
-        return HttpResponse(src.read())
+    return read_static(HTML_THOUGHTS, "text/html")
 
 
 def view_image(r):
-    with JPG_ME.open("rb") as src:
-        return HttpResponse(src.read(), content_type="image/jpeg")
+    return read_static(JPG_ME, "image/jpeg")
+
+
+# def view_index(r):
+#     with HTML_INDEX.open() as src:
+#         return HttpResponse(src.read())
+#
+#
+# def view_resume(r):
+#     with HTML_RESUME.open() as src:
+#         return HttpResponse(src.read())
+#
+#
+# def view_projects(r):
+#     with HTML_PROJECTS.open() as src:
+#         return HttpResponse(src.read())
+#
+#
+# def view_thoughts(r):
+#     with HTML_THOUGHTS.open() as src:
+#         return HttpResponse(src.read())
+#
+#
+# def view_image(r):
+#     with JPG_ME.open("rb") as src:
+#         return HttpResponse(src.read(), content_type="image/jpeg")
 
 
 urlpatterns = [
