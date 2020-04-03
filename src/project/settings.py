@@ -34,10 +34,10 @@ ALLOWED_HOSTS = [
 ]
 
 # Application definition
-
+# отвечает за активные приложения для данного проекта
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.admin', # отвечает за админку
+    'django.contrib.auth', # отвечает за управление пользователями
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'project.urls' # откуда брать все urls
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': (BASE_DIR / 'db.sqlite3').as_posix(),
+        'NAME': (BASE_DIR / 'db.sqlite3').as_posix(), # только в этой переменной django хочет строку
     }
 }
 

@@ -69,7 +69,7 @@ def view_image(r):
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # объект который стоит перед круглой скобкой мы пытаемся вызвать, в д.сл. path
+    path('admin/', admin.site.urls),  # позволяет входить под админом на свой сайт sakasper.herokuapp.com/admin
     path('', view_index),
     path('resume/', view_resume),
     path('projects/', view_projects),
