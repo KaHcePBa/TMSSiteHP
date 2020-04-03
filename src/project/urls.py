@@ -3,17 +3,16 @@ from pathlib import Path
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
-
-# from django.conf import settings
+from django.conf import settings
 # from django.conf.urls.static import static
 
-here = Path(__file__).parent.resolve()
+# here = Path(__file__).parent.resolve()
 
-HTML_INDEX: Path = here.parent.parent / "index.html"
-HTML_RESUME: Path = here.parent.parent / "resume.html"
-HTML_PROJECTS: Path = here.parent.parent / "projects.html"
-HTML_THOUGHTS: Path = here.parent.parent / "thoughts.html"
-JPG_ME: Path = here.parent.parent / "images/me.jpg"
+HTML_INDEX: Path = settings.REPO_DIR / "index.html"
+HTML_RESUME: Path = settings.REPO_DIR / "resume.html"
+HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
+HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
+JPG_ME: Path = settings.REPO_DIR / "images/me.jpg"
 
 
 def read_static(fn, ct): # fn = filename, ct = content type
