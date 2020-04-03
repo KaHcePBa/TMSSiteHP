@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 from django.conf import settings
+
 # from django.conf.urls.static import static
 
 # here = Path(__file__).parent.resolve()
@@ -15,11 +16,11 @@ HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
 JPG_ME: Path = settings.REPO_DIR / "images/me.jpg"
 
 
-def read_static(fn, ct): # fn = filename, ct = content type
-    with open(fn, "rb") as src: # открываем объект (для картинок стоит "rb" - читать в бинарном формате
-        content = src.read() # читаем открытый объект
-        resp = HttpResponse(content, content_type=ct) # response
-        return resp # выполняем
+def read_static(fn, ct):  # fn = filename, ct = content type
+    with open(fn, "rb") as src:  # открываем объект (для картинок стоит "rb" - читать в бинарном формате
+        content = src.read()  # читаем открытый объект
+        resp = HttpResponse(content, content_type=ct)  # response
+        return resp  # выполняем
 
 
 def view_index(r):
