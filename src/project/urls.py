@@ -16,11 +16,11 @@ HTML_THOUGHTS: Path = here.parent.parent / "thoughts.html"
 JPG_ME: Path = here.parent.parent / "images/me.jpg"
 
 
-def read_static(fn, ct):
-    with open(fn, "rb") as src:
-        content = src.read()
-        resp = HttpResponse(content, content_type=ct)
-        return resp
+def read_static(fn, ct): # fn = filename, ct = contenttype
+    with open(fn, "rb") as src: # открываем объект (для картинок стоит "rb" - читать в бинарном формате
+        content = src.read() # читаем открытый объект
+        resp = HttpResponse(content, content_type=ct) # response
+        return resp # выполняем
 
 
 def view_index(r):
