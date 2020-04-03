@@ -4,35 +4,56 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 
+# from django.conf import settings
+# from django.conf.urls.static import static
+
 here = Path(__file__).parent.resolve()
+
+HTML_INDEX: Path = here.parent.parent / "index.html"
+HTML_RESUME: Path = here.parent.parent / "resume.html"
+HTML_PROJECTS: Path = here.parent.parent / "projects.html"
+HTML_THOUGHTS: Path = here.parent.parent / "thoughts.html"
+JPG_ME: Path = here.parent.parent / "images/me.jpg"
+
+# args = HTML_INDEX, HTML_RESUME, HTML_PROJECTS, HTML_THOUGHTS
+
+
+# kwargs = dict(JPG_ME)
+
+
+# def read_static(r):
+#     with args.open() as src:
+#         return HttpResponse(src.read())
+
+
+# with kwargs.open("rb"):
+#     return HttpResponse(kwargs.read(), content_type="image/jpeg")
+
+# def view_static(r):
+#     return read_static(r)
 
 
 def view_index(r):
-    HTML_INDEX = here.parent.parent / "index.html"
     with HTML_INDEX.open() as src:
         return HttpResponse(src.read())
 
 
 def view_resume(r):
-    HTML_RESUME = here.parent.parent / "resume.html"
     with HTML_RESUME.open() as src:
         return HttpResponse(src.read())
 
 
 def view_projects(r):
-    HTML_PROJECTS = here.parent.parent / "projects.html"
     with HTML_PROJECTS.open() as src:
         return HttpResponse(src.read())
 
 
 def view_thoughts(r):
-    HTML_THOUGHTS = here.parent.parent / "thoughts.html"
     with HTML_THOUGHTS.open() as src:
         return HttpResponse(src.read())
 
 
 def view_image(r):
-    JPG_ME = here.parent.parent / "images/me.jpg"
     with JPG_ME.open("rb") as src:
         return HttpResponse(src.read(), content_type="image/jpeg")
 
