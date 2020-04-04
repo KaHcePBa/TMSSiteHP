@@ -5,16 +5,13 @@ from django.http import HttpResponse
 from django.urls import path
 from django.conf import settings
 
-# from django.conf.urls.static import static
-
-# here = Path(__file__).parent.resolve()
-
+CSS_FILE: Path = settings.REPO_DIR / "css/style.css"
 HTML_INDEX: Path = settings.REPO_DIR / "index.html"
 HTML_RESUME: Path = settings.REPO_DIR / "resume.html"
 HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
 HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
-CSS_FILE: Path = settings.REPO_DIR / "css/style.css"
 JPG_ME: Path = settings.REPO_DIR / "images/me.jpg"
+BACK_GND: Path = settings.REPO_DIR / "backgnd/background.jpg"
 
 
 def read_static(fn, ct):  # fn = filename, ct = content type
@@ -48,29 +45,8 @@ def view_image(r):
     return read_static(JPG_ME, "image/jpeg")
 
 
-# def view_index(r):
-#     with HTML_INDEX.open() as src:
-#         return HttpResponse(src.read())
-#
-#
-# def view_resume(r):
-#     with HTML_RESUME.open() as src:
-#         return HttpResponse(src.read())
-#
-#
-# def view_projects(r):
-#     with HTML_PROJECTS.open() as src:
-#         return HttpResponse(src.read())
-#
-#
-# def view_thoughts(r):
-#     with HTML_THOUGHTS.open() as src:
-#         return HttpResponse(src.read())
-#
-#
-# def view_image(r):
-#     with JPG_ME.open("rb") as src:
-#         return HttpResponse(src.read(), content_type="image/jpeg")
+def view_backgnd(r):
+    return read_static(BACK_GND, "image/jpeg")
 
 
 urlpatterns = [
@@ -80,5 +56,6 @@ urlpatterns = [
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
     path('me/', view_image),
+    path('background/', view_backgnd),
     path('css/', view_css),
 ]
