@@ -13,6 +13,7 @@ HTML_INDEX: Path = settings.REPO_DIR / "index.html"
 HTML_RESUME: Path = settings.REPO_DIR / "resume.html"
 HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
 HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
+CSS_FILE: Path = settings.REPO_DIR / "css/style.css"
 JPG_ME: Path = settings.REPO_DIR / "images/me.jpg"
 
 
@@ -21,6 +22,10 @@ def read_static(fn, ct):  # fn = filename, ct = content type
         content = src.read()  # читаем открытый объект
         resp = HttpResponse(content, content_type=ct)  # response
         return resp  # выполняем
+
+
+def view_css(r):
+    return read_static(CSS_FILE, "text/css")
 
 
 def view_index(r):
@@ -75,4 +80,5 @@ urlpatterns = [
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
     path('me/', view_image),
+    path('css/', view_css),
 ]

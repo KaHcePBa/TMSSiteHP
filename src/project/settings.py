@@ -59,7 +59,9 @@ ROOT_URLCONF = 'project.urls' # откуда брать все urls
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            PROJECT_DIR / "templates"
+        ], # где искать шаблоны
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
