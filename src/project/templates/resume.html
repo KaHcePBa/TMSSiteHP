@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Personal SK website{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
           rel="stylesheet">
 </head>
@@ -34,7 +35,7 @@
             </article>
         </div>
         <div class="intro__inner">
-            <img class="intro-image" src="/me/" alt="It's me on bikeshow" width="718" height="410">
+            <img class="intro-image" src="{% static 'images/me.jpg' %}" alt="It's me on bikeshow" width="718" height="410">
         </div>
     </div>
 </div>
