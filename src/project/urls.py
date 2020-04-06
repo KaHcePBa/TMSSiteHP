@@ -39,8 +39,12 @@ def read_static(fn, ct):  # fn = filename, ct = content type
         return resp  # выполняем
 
 
-def view_css(r):
-    return read_static(CSS_FILE, "text/css")
+def view_backgnd(r):
+    return read_static(BACK_GND, "image/jpeg")
+
+
+# def view_css(r):
+#     return read_static(CSS_FILE, "text/css")
 
 
 # def view_index(r):
@@ -59,12 +63,8 @@ def view_css(r):
 #     return read_static(HTML_THOUGHTS, "text/html")
 
 
-def view_image(r):
-    return read_static(JPG_ME, "image/jpeg")
-
-
-def view_backgnd(r):
-    return read_static(BACK_GND, "image/jpeg")
+# def view_image(r):
+#     return read_static(JPG_ME, "image/jpeg")
 
 
 urlpatterns = [
@@ -73,7 +73,7 @@ urlpatterns = [
     path('resume/', view_resume),
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
-    path('me/', view_image),
+    # path('me/', view_image),
     path('background/', view_backgnd),
-    path('css/', view_css),
+    # path('css/', view_css),
 ]
