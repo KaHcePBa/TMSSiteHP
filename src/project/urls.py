@@ -3,9 +3,10 @@ from pathlib import Path
 from django.contrib import admin
 from django.http import HttpResponse
 from django.http import HttpRequest
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.shortcuts import render
+
 
 # CSS_FILE: Path = settings.REPO_DIR / "css" / "style.css"
 # HTML_INDEX: Path = settings.REPO_DIR / "index.html"
@@ -13,11 +14,8 @@ from django.shortcuts import render
 # HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
 # HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
 # JPG_ME: Path = settings.REPO_DIR / "images" / "me.jpg"
+
 BACK_GND: Path = settings.REPO_DIR / "backgnd" / "background.jpg"
-
-
-def view_index(request: HttpRequest) -> HttpResponse:
-    return render(request, "index.html")
 
 
 def view_resume(request: HttpRequest) -> HttpResponse:
@@ -69,7 +67,7 @@ def view_backgnd(r):
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # позволяет входить под админом на свой сайт sakasper.herokuapp.com/admin
-    path('', view_index),
+    path('', include("apps.index.urls")),
     path('resume/', view_resume),
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
