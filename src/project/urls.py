@@ -14,12 +14,9 @@ from django.shortcuts import render
 # HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
 # HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
 # JPG_ME: Path = settings.REPO_DIR / "images" / "me.jpg"
+# from apps.resume.views import view_resume
 
 BACK_GND: Path = settings.REPO_DIR / "backgnd" / "background.jpg"
-
-
-def view_resume(request: HttpRequest) -> HttpResponse:
-    return render(request, "resume.html")
 
 
 def view_projects(request: HttpRequest) -> HttpResponse:
@@ -68,7 +65,7 @@ def view_backgnd(r):
 urlpatterns = [
     path('admin/', admin.site.urls),  # позволяет входить под админом на свой сайт sakasper.herokuapp.com/admin
     path('', include("apps.index.urls")),
-    path('resume/', view_resume),
+    path('resume/', include("apps.resume.urls")),
     path('projects/', view_projects),
     path('thoughts/', view_thoughts),
     # path('me/', view_image),
