@@ -2,11 +2,8 @@ from pathlib import Path
 
 from django.contrib import admin
 from django.http import HttpResponse
-from django.http import HttpRequest
 from django.urls import path, include
 from django.conf import settings
-from django.shortcuts import render
-
 
 # CSS_FILE: Path = settings.REPO_DIR / "css" / "style.css"
 # HTML_INDEX: Path = settings.REPO_DIR / "index.html"
@@ -16,12 +13,9 @@ from django.shortcuts import render
 # JPG_ME: Path = settings.REPO_DIR / "images" / "me.jpg"
 # from apps.resume.views import view_resume
 # from apps.projects.views import view_projects
+# from apps.thoughts.views import view_thoughts
 
 BACK_GND: Path = settings.REPO_DIR / "backgnd" / "background.jpg"
-
-
-def view_thoughts(request: HttpRequest) -> HttpResponse:
-    return render(request, "thoughts.html")
 
 
 def read_static(fn, ct):  # fn = filename, ct = content type
@@ -64,7 +58,7 @@ urlpatterns = [
     path('', include("apps.index.urls")),
     path('resume/', include("apps.resume.urls")),
     path('projects/', include("apps.projects.urls")),
-    path('thoughts/', view_thoughts),
+    path('thoughts/', include("apps.thoughts.urls")),
     # path('me/', view_image),
     path('background/', view_backgnd),
     # path('css/', view_css),
