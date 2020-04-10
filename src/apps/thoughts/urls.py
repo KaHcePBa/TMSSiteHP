@@ -1,7 +1,7 @@
 from django.urls import path
 
-from apps.thoughts.views import view_thoughts
+from apps.thoughts.views import ThoughtsView
 
 urlpatterns = [
-    path('', view_thoughts),
+    path('', ThoughtsView.as_view()),
 ]
