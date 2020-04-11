@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Kaushan Script', cursive; */
     font-size: 15px;
     line-height: 1.5;
     color: goldenrod;
@@ -10,6 +9,7 @@ body {
 *,
  *:before,
  *:after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -33,16 +33,15 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
 
     background: url("/background/") center no-repeat;
-    -moz-background-size:100%;
-    -webkit-background-size:100%;
-    -o-background-size:100%;
-    background-size:100%;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .intro__inner{
     width: 52%;
     max-width: 880px;
     margin: 1300 auto;
+
 }
 
 .intro__innerright{
