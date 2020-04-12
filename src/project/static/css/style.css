@@ -1,15 +1,19 @@
 body {
     margin: 0;
+
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    color: goldenrod;
+    font-size: 14px;
+    color: #6c7279;
+    -webkit-font-smoothing: antialiased;
+    
+    border-color: #fff;
+    /*    font-family: 'Kaushan Script', cursive;*/
+
 }
 
 *,
- *:before,
- *:after {
-    -webkit-box-sizing: border-box;
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -17,120 +21,141 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/* Container */
+p {
+    margin: 0 0 10px 0;
+}
+
+/* Container 
+=========================*/
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 
-/* Intro */
-.intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
 
-    background: url("/background/") center no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
-
-.intro__inner{
-    width: 52%;
-    max-width: 880px;
-    margin: 1300 auto;
-
-}
-
-.intro__innerright{
-    font-size: 15px;
-    font-weight: bold;
-    line-height: .5;
-    position: absolute;
-    left: 80%;
-    top: 90%;
-    width: 63%;
-}
-
-.intro-image {
-    display: block;
-    width: auto;
-    border-radius: 10px;
-
-    opacity: .5;
-
-}
-
-/* Header */
+/* Header 
+=========================*/
 .header {
     width: 100%;
-    padding-top: 30px;
+    height: 100px; /* обозначаем размер шапки */
+
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000;
 }
 
-/* Header_logo */
-.header__logo {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 40px;
-    font-weight: 700;
-    color: #fff;
-}
-
-/* Header__inner */
 .header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #515369; /*подчеркивает шапку*/
 }
 
-/* nav */
+/* Nav 
+=========================*/
 .nav {
-    font-size: 14px;
-    text-transform: uppercase;
+    display: flex;
+    font-size: 16px;
     font-weight: 700;
-    color: #fff;
+    text-transform: uppercase;
 }
 
-/* nav__link */
 .nav__link {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
-    position: relative;
-
+    margin-left: 50px;
     color: #fff;
     text-decoration: none;
-
-    transition: color .1s linear;
-}
-
-.nav__link:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-
-    background-color: goldenrod;
-    opacity: 0;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
+    opacity: .75;
 
     transition: opacity .1s linear;
 }
 
-.nav__link:hover {
-    color: goldenrod;
+.nav__link:first-child {
+    margin-left: 0;
 }
 
-.nav__link:hover:after {
+.nav__link:hover {
+    color: #e78200; /* цвет ссылок при наведении мыши */
+
     opacity: 1;
+    text-decoration: underline;
 }
+
+/* Intro 
+=========================*/
+.intro {
+    display: flex;
+    flex-direction: column; /* каждый новый элемент в Intro будет начинаться с новой строки и занимать всю ширину экрана */
+    justify-content: center; /* выравнивание приветствия по центру Intro */
+    height: 750px;
+    padding-top: 100px; /* отступ от края страницы (появляется ниже шапки) */
+
+    background: #31344e url("intro-bg.jpg") center no-repeat; /* файл берется из /project/static/css */
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    
+    text-align: center;
+
+}
+
+.intro__title { /* надпись по центру большими */
+    margin: 0 0 30px 0; /* внешний отступ между h1 и h2 */
+    
+    font-family: 'Kaushan Script', cursive;
+    font-size: 65px;
+    line-height: 1.1; /* расстояние между строками */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase; /* большими */
+}
+
+.intro__subtitle {
+    margin-bottom: 60px; /* отступ от надписи о мудрости до кнопки */
+    
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+/* Button 
+=========================*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 14px 40px; /* первое - сверху и снизу, второе - слева и справа */
+    
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+    
+    font-family: inherit; /* наследуем шрифт родителя */
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    transition: background .1s linear; /* плавное изменение цвета при наведении курсора */
+}
+
+.btn--red {
+    background-color: #e84545; /* цвет кнопки без наведения курсорв */
+}
+
+.btn--red:hover {
+    background-color: #dd3434; /* цвет кнопки при наведении курсора */
+}
+
+
+
+
+

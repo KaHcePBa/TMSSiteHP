@@ -5,17 +5,7 @@ from django.http import HttpResponse
 from django.urls import path, include
 from django.conf import settings
 
-# CSS_FILE: Path = settings.REPO_DIR / "css" / "style.css"
-# HTML_INDEX: Path = settings.REPO_DIR / "index.html"
-# HTML_RESUME: Path = settings.REPO_DIR / "resume.html"
-# HTML_PROJECTS: Path = settings.REPO_DIR / "projects.html"
-# HTML_THOUGHTS: Path = settings.REPO_DIR / "thoughts.html"
-# JPG_ME: Path = settings.REPO_DIR / "images" / "me.jpg"
-# from apps.resume.views import view_resume
-# from apps.projects.views import view_projects
-# from apps.thoughts.views import view_thoughts
-
-BACK_GND: Path = settings.REPO_DIR / "backgnd" / "background.jpg"
+BACKnLOGO: Path = settings.PROJECT_DIR / "images" / "intro-bg.jpg"
 
 
 def read_static(fn, ct):  # fn = filename, ct = content type
@@ -25,32 +15,10 @@ def read_static(fn, ct):  # fn = filename, ct = content type
         return resp  # выполняем
 
 
-def view_backgnd(r):
-    return read_static(BACK_GND, "image/jpeg")
+def view_backgndnlogo(r):
+    return read_static(BACKnLOGO, "image/jpeg", "image/png")
 
 
-# def view_css(r):
-#     return read_static(CSS_FILE, "text/css")
-
-
-# def view_index(r):
-#     return read_static(HTML_INDEX, "text/html")
-#
-#
-# def view_resume(r):
-#     return read_static(HTML_RESUME, "text/html")
-#
-#
-# def view_projects(r):
-#     return read_static(HTML_PROJECTS, "text/html")
-#
-#
-# def view_thoughts(r):
-#     return read_static(HTML_THOUGHTS, "text/html")
-
-
-# def view_image(r):
-#     return read_static(JPG_ME, "image/jpeg")
 
 
 urlpatterns = [
@@ -60,6 +28,6 @@ urlpatterns = [
     path('projects/', include("apps.projects.urls")),
     path('thoughts/', include("apps.thoughts.urls")),
     # path('me/', view_image),
-    path('background/', view_backgnd),
+    path('images/', view_backgndnlogo),
     # path('css/', view_css),
 ]

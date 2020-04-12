@@ -1,45 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Personal SK website{% endblock %}
+{% block title %}Sergey Kasperovich. Personal website.{% endblock %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
-          rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="header__inner">
-            <div class="header__logo">Homepage || Sergey Kasperovich</div>
 
-            <nav class="nav">
-                <a class="nav__link" href="/">Startpage</a>
-                <a class="nav__link" href="/resume/">Resume</a>
-                <a class="nav__link" href="/projects/">Projects</a>
-                <a class="nav__link" href="/thoughts/">Thoughts</a>
-            </nav>
+<!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Creative solutions">
+                </div>
+
+                <nav class="nav">
+                    <a class="nav__link" href="/">Target</a>
+                    <a class="nav__link" href="/resume/">Resume</a>
+                    <a class="nav__link" href="/projects/">Projects</a>
+                    <a class="nav__link" href="/thoughts/">Thoughts</a>
+                </nav>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
+<!-- Intro -->
 <div class="intro">
     <div class="container">
-        <div class="intro__innerright">
-            <article>
-                <p>(C) Serge Kasperovich 2020</p>
-            </article>
-        </div>
-        <div class="intro__inner">
-            <img class="intro-image" src="{% static 'index/images/me.jpg' %}" alt="It's me on bikeshow" width="718" height="410">
-        </div>
+       <div class="intro__inner">
+           <h1 class="intro__title">Let's get to know me right now!</h1>
+           <h2 class="intro__subtitle">“Истинная мудрость в осознании того, что вы ничего не знаете.”
+           <p>Сократ (469 до н.э.–399 до н.э.)</p></h2>
+           <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out more</a>
+         </div>
     </div>
 </div>
 
 </body>
-
 </html>
