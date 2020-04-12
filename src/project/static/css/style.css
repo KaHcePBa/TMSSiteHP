@@ -92,7 +92,7 @@ p {
     height: 750px;
     padding-top: 100px; /* отступ от края страницы (появляется ниже шапки) */
 
-    background: #31344e url("intro-bg.jpg") center no-repeat; /* файл берется из /project/static/css */
+    background: #31344e url("backgnd/intro-bg.jpg") center no-repeat; /* файл берется из /project/static/css/backgnd */
     background-size: cover;
 }
 
