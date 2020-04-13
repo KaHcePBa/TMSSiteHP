@@ -1,18 +1,19 @@
+from os import getenv
 from pathlib import Path
+
+from dynaconf import settings as _settings
+import dj_database_url
 
 PROJECT_DIR = Path(__file__).parent.resolve()  # /project
 BASE_DIR = PROJECT_DIR.parent.resolve()  # /src
 REPO_DIR = BASE_DIR.parent.resolve()  # /tmssitehp
 
-SECRET_KEY = '7qyg2&dyns4-cx-$jo5%5r93#$%$s%226$@vi+w^o543a^iy%-'
+SECRET_KEY = _settings.SECRET_KEY
 
-DEBUG = True
+DEBUG = _settings.DEBUG
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "sakasper.herokuapp.com",
-]
+ALLOWED_HOSTS = _settings.ALLOWED_HOSTS
+
 # отвечает за активные приложения для данного проекта
 INSTALLED_APPS = [
     'django.contrib.admin',  # отвечает за админку
@@ -58,12 +59,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+_db_url = _settings.DATABASE_URL
+if _settings.ENV_FOR_DYNACONF == "heroku":
+    _db_url = getenv("DATABASE_URL")
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': (BASE_DIR / 'db.sqlite3').as_posix(),  # только в этой переменной django хочет строку
+    "default": dj_database_url.parse(_db_url, conn_max_age=600),
     }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
