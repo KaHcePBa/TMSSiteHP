@@ -155,7 +155,36 @@ p {
     background-color: #dd3434; /* цвет кнопки при наведении курсора */
 }
 
+/* Skills
+=========================*/
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
 
+.skills__item {
+    width: 33.33333%;
+    padding: 0 40px;
+    margin: 25px 0;
+    text-align: center;
+}
 
+.skills__icon {
+    margin-bottom: 25px;
+}
 
+.skills__title {
+    margin-bottom: 20px;
 
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.skills__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6c7279;
+}
