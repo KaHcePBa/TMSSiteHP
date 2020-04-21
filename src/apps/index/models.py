@@ -8,4 +8,4 @@ class IndexInSubInf(m.Model):
         verbose_name_plural = 'Intro Subtitle Info'
 
     def __str__(self):
-        return f"{self.__class__.__name__}(id={self.pk}, ist={self.ist!r})"
+        return f"({self.pk}, {self.ist!r})"

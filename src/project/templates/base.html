@@ -35,8 +35,7 @@
     <div class="container">
        <div class="intro__inner">
            <h1 class="intro__title">Let's get to know me right now!</h1>
-           <h2 class="intro__subtitle">“Истинная мудрость в осознании того, что вы ничего не знаете.”
-           <p>Сократ (469 до н.э.–399 до н.э.)</p></h2>
+           <h2 class="intro__subtitle">{% block subtitle %}{% endblock %}</h2>
            <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out more</a>
          </div>
     </div>
@@ -82,6 +81,74 @@
         </div>
     </div> <!-- /.Skills -->
 </div> <!-- /.container -->
+
+<!-- Works -->
+<div class="works">
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-1.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">МСФО (IFRS) 9</div>
+            <div class="works__text">Разработка и внедрение расчета ожидаемых кредитных убытков в ОАО "Белгазпромбанк"</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-2.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-3.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-4.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-5.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-6.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-7.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="{% static 'images/works/work-8.jpg' %}" alt="">
+        <div class="works__content">
+            <div class="works__title">Project name</div>
+            <div class="works__text">User Interface Design</div>
+        </div>
+    </div>
+</div> <!-- /.works -->
+
 
 </body>
 </html>
