@@ -7,7 +7,7 @@
 #     if request.method == "GET":
 #         return render(request, "index/index.html")
 from django.views.generic import TemplateView
-from apps.index.models import IndexInSubInf
+from applications.index.models import IndexInSubInf
 
 
 class IndexView(TemplateView):

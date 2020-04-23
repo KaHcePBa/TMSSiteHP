@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from apps.index.models import IndexInSubInf
+from applications.index.models import IndexInSubInf
 
 
 class IndexInSubInfAdminForm(forms.ModelForm):
