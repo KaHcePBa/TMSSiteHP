@@ -8,7 +8,7 @@ class IndexInSubInfAdminForm(forms.ModelForm):
     class Meta:
         model = IndexInSubInf
         fields = "__all__"
-        widgets = {"ist": forms.TextInput()}
+        widgets = {"ist": forms.Textarea()}
 
 
 @admin.register(IndexInSubInf)
