@@ -18,6 +18,8 @@ class IndexView(TemplateView):
         parent_ctx = super().get_context_data(**kwargs)
 
         info = IndexInSubInf.objects.first()
+        if info is None:
+            pass
         ctx = {"ist": info.ist}
 
         ctx.update(parent_ctx)
