@@ -18,7 +18,7 @@ class IndexView(TemplateView):
         ctx = super().get_context_data(**kwargs)
 
         info = IndexInSubInf.objects.first()
-        ctx["ist"] = info
+        ctx["ist"] = info.ist
 
         return ctx
     # def get(self, request):
