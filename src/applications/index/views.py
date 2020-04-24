@@ -15,10 +15,12 @@ class IndexView(TemplateView):
     model = IndexInSubInf
 
     def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
+        parent_ctx = super().get_context_data(**kwargs)
 
-        info = IndexInSubInf.objects.all()
-        ctx["ist"] = IndexInSubInf
+        info = IndexInSubInf.objects.first()
+        ctx = {"ist": info.ist}
+
+        ctx.update(parent_ctx)
 
         return ctx
     # def get(self, request):
