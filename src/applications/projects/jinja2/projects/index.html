@@ -1,43 +1,45 @@
-{% load static %}
+{% extends "base.html" %}
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    {% block title %}Sergey Kasperovich personal website{% endblock %}
+    <link href="{{ static('css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
+          rel="stylesheet">
 </head>
 
 <body>
 
 
 <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__logo">
-                    <img src="{% static 'images/logo.png' %}" alt="Creative solutions">
-                </div>
-
-                <nav class="nav">
-                    <a class="nav__link" href="/">Target</a>
-                    <a class="nav__link" href="/resume/">Resume</a>
-                    <a class="nav__link" href="/projects/">Projects</a>
-                    <a class="nav__link" href="/thoughts/">Thoughts</a>
-                </nav>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="{{ static('images/logo.png') }}" alt="Creative solutions">
             </div>
+
+            <nav class="nav">
+                <a class="nav__link" href="{{ url('index:index') }}">Target</a>
+                <a class="nav__link" href="{{ url('resume:index') }}">Resume</a>
+                <a class="nav__link" href="{{ url('projects:index') }}">Projects</a>
+                <a class="nav__link" href="{{ url('thoughts:index') }}">Thoughts</a>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
 
 <!-- Intro -->
 <div class="intro">
     <div class="container">
-       <div class="intro__inner">
-           <h1 class="intro__title">Let's get to know me right now!</h1>
-           <h2 class="intro__subtitle">{% block subtitle %}{% endblock %}</h2>
-           <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out more</a>
-         </div>
+        <div class="intro__inner">
+            <h1 class="intro__title">Let's get to know me right now!</h1>
+            <h2 class="intro__subtitle">{% block subtitle %}{{ ist | safe }}{% endblock %}</h2>
+            <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out
+                more</a>
+        </div>
     </div>
 </div>
 
@@ -45,37 +47,37 @@
 <div class="container">
     <div class="skills">
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-1.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-1.png') }}" alt="">
             <h4 class="skills__title">Аналитическое мышление</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
 
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-2.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-2.png') }}" alt="">
             <h4 class="skills__title">Технический бэкграунд</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
 
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-3.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-3.png') }}" alt="">
             <h4 class="skills__title">Свежие идеи и взгляды</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
 
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-4.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-4.png') }}" alt="">
             <h4 class="skills__title">Постоянное развитие</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
 
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-5.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-5.png') }}" alt="">
             <h4 class="skills__title">Деловой подход</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
 
         <div class="skills__item">
-            <img class="skills__icon" src="{% static 'images/skills/skill-6.png' %}" alt="">
+            <img class="skills__icon" src="{{ static('images/skills/skill-6.png') }}" alt="">
             <h4 class="skills__title">Креативное мышление</h4>
             <div class="skills__text">Здесь будет какая-то надпись, раскрывающая написанное в заголовке</div>
         </div>
@@ -85,15 +87,16 @@
 <!-- Works -->
 <div class="works">
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-1.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-1.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">МСФО (IFRS) 9</div>
-            <div class="works__text">Разработка и внедрение расчета ожидаемых кредитных убытков в ОАО "Белгазпромбанк"</div>
+            <div class="works__text">Разработка и внедрение расчета ожидаемых кредитных убытков в ОАО "Белгазпромбанк"
+            </div>
         </div>
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-2.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-2.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -101,7 +104,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-3.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-3.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -109,7 +112,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-4.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-4.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -117,7 +120,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-5.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-5.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -125,7 +128,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-6.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-6.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -133,7 +136,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-7.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-7.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>
@@ -141,7 +144,7 @@
     </div>
 
     <div class="works__item">
-        <img class="works__photo" src="{% static 'images/works/work-8.jpg' %}" alt="">
+        <img class="works__photo" src="{{ static('images/works/work-8.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">Project name</div>
             <div class="works__text">User Interface Design</div>

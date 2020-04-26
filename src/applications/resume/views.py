@@ -3,9 +3,9 @@
 # from django.views import View
 
 # def view_resume(request: HttpRequest) -> HttpResponse:
-#     return render(request, "resume/resume.html")
+#     return render(request, "resume/index.html")
 from django.views.generic import TemplateView
 
 
-class ResumeView(TemplateView):
-    template_name = "resume/resume.html"
+class IndexView(TemplateView):
+    template_name = "resume/index.html"

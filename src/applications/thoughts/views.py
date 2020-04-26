@@ -4,9 +4,9 @@
 
 
 # def view_thoughts(request: HttpRequest) -> HttpResponse:
-#     return render(request, "thoughts/thoughts.html")
+#     return render(request, "thoughts/index.html")
 from django.views.generic import TemplateView
 
 
-class ThoughtsView(TemplateView):
-    template_name = "thoughts/thoughts.html"
+class IndexView(TemplateView):
+    template_name = "thoughts/index.html"

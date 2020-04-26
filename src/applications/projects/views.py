@@ -4,9 +4,9 @@
 
 
 # def view_projects(request: HttpRequest) -> HttpResponse:
-#     return render(request, "projects/projects.html")
+#     return render(request, "projects/index.html")
 from django.views.generic import TemplateView
 
 
-class ProjectsView(TemplateView):
-    template_name = "projects/projects.html"
+class IndexView(TemplateView):
+    template_name = "projects/index.html"

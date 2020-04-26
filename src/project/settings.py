@@ -43,8 +43,21 @@ ROOT_URLCONF = 'project.urls'  # откуда брать все urls
 
 TEMPLATES = [
     {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [PROJECT_DIR / "jinja2", ],  # где искать шаблоны
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': "project.utils.jinja2env.build_jinja2_environment",
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [PROJECT_DIR / "templates"],  # где искать шаблоны
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,7 +78,7 @@ if _settings.ENV_FOR_DYNACONF == "heroku":
 
 DATABASES = {
     "default": dj_database_url.parse(_db_url, conn_max_age=600),
-    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
