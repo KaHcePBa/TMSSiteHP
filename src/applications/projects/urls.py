@@ -1,7 +1,10 @@
 from django.urls import path
 
-from applications.projects.views import ProjectsView
+from applications.projects.apps import ProjectsConfig
+from applications.projects.views import IndexView
+
+app_name = ProjectsConfig.label
 
 urlpatterns = [
-    path('', ProjectsView.as_view()),
+    path('', IndexView.as_view(), name='index'),
 ]

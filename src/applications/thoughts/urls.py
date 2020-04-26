@@ -1,7 +1,10 @@
 from django.urls import path
 
-from applications.thoughts.views import ThoughtsView
+from applications.thoughts.apps import ThoughtsConfig
+from applications.thoughts.views import IndexView
+
+app_name = ThoughtsConfig.label
 
 urlpatterns = [
-    path('', ThoughtsView.as_view()),
+    path('', IndexView.as_view(), name='index'),
 ]

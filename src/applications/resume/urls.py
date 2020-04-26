@@ -1,7 +1,10 @@
 from django.urls import path
 
-from applications.resume.views import ResumeView
+from applications.resume.apps import ResumeConfig
+from applications.resume.views import IndexView
+
+app_name = ResumeConfig.label
 
 urlpatterns = [
-    path('', ResumeView.as_view()),
+    path('', IndexView.as_view(), name='index'),
 ]

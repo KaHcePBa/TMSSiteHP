@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link href="{{ static('css/style.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
+          rel="stylesheet">
 </head>
 
 <body>
 
 
 <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__logo">
-                    <img src="{{ static('images/logo.png') }}" alt="Creative solutions">
-                </div>
-
-                <nav class="nav">
-                    <a class="nav__link" href="{{ static('index/index.html') }}">Target</a>
-                    <a class="nav__link" href="{{ static('resume/resume.html') }}">Resume</a>
-                    <a class="nav__link" href="{{ static('projects/projects.html') }}">Projects</a>
-                    <a class="nav__link" href="{{ static('thoughts/thoughts.html') }}">Thoughts</a>
-                </nav>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="{{ static('images/logo.png') }}" alt="Creative solutions">
             </div>
+
+            <nav class="nav">
+                <a class="nav__link" href="{{ url('index:index') }}">Target</a>
+                <a class="nav__link" href="{{ url('resume:index') }}">Resume</a>
+                <a class="nav__link" href="{{ url('projects:index') }}">Projects</a>
+                <a class="nav__link" href="{{ url('thoughts:index') }}">Thoughts</a>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
 
 <!-- Intro -->
 <div class="intro">
     <div class="container">
-       <div class="intro__inner">
-           <h1 class="intro__title">Let's get to know me right now!</h1>
-           <h2 class="intro__subtitle">{% block subtitle %}{% endblock %}</h2>
-           <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out more</a>
-         </div>
+        <div class="intro__inner">
+            <h1 class="intro__title">Let's get to know me right now!</h1>
+            <h2 class="intro__subtitle">{% block subtitle %}{% endblock %}</h2>
+            <a class="btn btn--red" href="https://www.linkedin.com/in/serge-kasperovich/" target="_blank">Find out
+                more</a>
+        </div>
     </div>
 </div>
 
@@ -86,7 +88,8 @@
         <img class="works__photo" src="{{ static('images/works/work-1.jpg') }}" alt="">
         <div class="works__content">
             <div class="works__title">МСФО (IFRS) 9</div>
-            <div class="works__text">Разработка и внедрение расчета ожидаемых кредитных убытков в ОАО "Белгазпромбанк"</div>
+            <div class="works__text">Разработка и внедрение расчета ожидаемых кредитных убытков в ОАО "Белгазпромбанк"
+            </div>
         </div>
     </div>
 
