@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "applications.resume",
     "applications.projects",
     "applications.thoughts",
+    "applications.blog",
 ]
 
 MIDDLEWARE = [
