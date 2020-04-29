@@ -19,4 +19,4 @@ heroku:
 travis:
   DATABASE_URL: "postgresql://postgres@localhost:5432/sa" # файл который идет на GitHab
   DEBUG: true
-  SECRET_KEY: "1"
+  SECRET_KEY: "HHur+(P/2MPQuFg<gS9Sag)p}Rby(8,rV!A(mia`ByaKiRhASBGRfqj^Gber=[!"
