@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     "applications.index",
     "applications.resume",
     "applications.projects",
-    "applications.thoughts",
+    "applications.musicpl",
     "applications.blog",
 ]
 
