@@ -1,6 +1,7 @@
 from os import getenv
 from pathlib import Path
 
+from django.urls import reverse_lazy
 from dynaconf import settings as _settings
 import dj_database_url
 
@@ -107,3 +108,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = REPO_DIR / ".static"
+
+# blog
+LOGIN_URL = reverse_lazy("onboarding:sign_in")
+LOGIN_REDIRECT_URL = reverse_lazy("blog:all_posts")
