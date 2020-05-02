@@ -12,6 +12,6 @@ class IndexInSubInfAdminForm(forms.ModelForm):
 
 
 @admin.register(IndexInSubInf)
-class UserInfoAdminModel(ModelAdmin):
+class IndexInSubInfAdminModel(ModelAdmin):
     form = IndexInSubInfAdminForm
 
