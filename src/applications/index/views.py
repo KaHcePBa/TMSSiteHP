@@ -26,7 +26,7 @@ class IndexView(TemplateView):
         # except ObjectDoesNotExist:
         #     pass
 
-        randomized_id = random.randrange(1, 4) # если нужны от 1 до 3
+        randomized_id = random.randrange(2, 5) # если нужны от 2 до 4
 
         info = IndexInSubInf.objects.get(id=randomized_id)
         ctx["ist"] = info.ist
