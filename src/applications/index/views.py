@@ -10,6 +10,8 @@ import random
 
 from django.views.generic import TemplateView
 from applications.index.models import IndexInSubInf
+
+
 # from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -26,13 +28,13 @@ class IndexView(TemplateView):
         # except ObjectDoesNotExist:
         #     pass
 
-        randomized_id = random.randrange(2, 5) # если нужны от 2 до 4
+        randomized_id = random.randrange(2, 7)  # если нужны от 2 до 4
 
-        info = IndexInSubInf.objects.get(id=randomized_id)
+        info = IndexInSubInf.objects.get(id=randomized_id)  # если get не находит объекта - ObjectDoesNotExist
         ctx["ist"] = info.ist
 
         if ctx["ist"] is None:
-            ctx["ist"] = 'Your database is empty. Please update!'
+            ctx["ist"] = 'Your database is empty or has null strings. Please update!'
 
         return ctx
     # def get(self, request):
