@@ -74,12 +74,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-_db_url = _settings.DATABASE_URL
+DATABASE_URL = _settings.DATABASE_URL
 if _settings.ENV_FOR_DYNACONF == "heroku":
-    _db_url = getenv("DATABASE_URL")
+    DATABASE_URL = getenv("DATABASE_URL")
 
 DATABASES = {
-    "default": dj_database_url.parse(_db_url, conn_max_age=600),
+    "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600),
 }
 
 AUTH_PASSWORD_VALIDATORS = [
