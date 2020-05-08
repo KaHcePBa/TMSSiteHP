@@ -1,9 +1,9 @@
 from os import getenv
 from pathlib import Path
 
+import dj_database_url
 from django.urls import reverse_lazy
 from dynaconf import settings as _settings
-import dj_database_url
 
 PROJECT_DIR = Path(__file__).parent.resolve()  # /project
 BASE_DIR = PROJECT_DIR.parent.resolve()  # /src
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "applications.projects",
     "applications.musicpl",
     "applications.blog",
+    # "applications.onboarding",
 ]
 
 MIDDLEWARE = [

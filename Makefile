@@ -21,9 +21,9 @@ endif
 MANAGE := ${RUN} python src/manage.py
 
 
-#.PHONY: format
-#format:
-#	${RUN} isort --virtual-env ${VENV} --recursive --apply ${HERE}
+.PHONY: format
+format:
+	${RUN} isort --virtual-env ${VENV} --recursive --apply ${HERE}
 #	${RUN} black ${HERE}
 #
 #

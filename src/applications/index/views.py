@@ -9,8 +9,8 @@
 import random
 
 from django.views.generic import TemplateView
-from applications.index.models import IndexInSubInf
 
+from applications.index.models import IndexInSubInf
 
 # from django.core.exceptions import ObjectDoesNotExist
 
