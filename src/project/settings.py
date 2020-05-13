@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     "applications.projects",
     "applications.musicpl",
     "applications.blog",
-    # "applications.onboarding",
 ]
 
 MIDDLEWARE = [
@@ -111,5 +110,5 @@ STATICFILES_DIRS = [
 STATIC_ROOT = REPO_DIR / ".static"
 
 # blog
-LOGIN_URL = reverse_lazy("onboarding:sign_in")
+# LOGIN_URL = reverse_lazy("onboarding:sign_in")
 LOGIN_REDIRECT_URL = reverse_lazy("blog:all_posts")
