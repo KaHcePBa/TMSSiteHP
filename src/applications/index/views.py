@@ -2,6 +2,7 @@ import random
 
 from django.views.generic import TemplateView
 from applications.index.models import IndexInSubInf
+from django.core.exceptions import ObjectDoesNotExist
 
 class IndexView(TemplateView):
     template_name = "index/index.html"
@@ -12,7 +13,11 @@ class IndexView(TemplateView):
 
         randomized_id = random.randrange(2, 7)  # если нужны от 2 до 8
 
-        info = IndexInSubInf.objects.get(id=randomized_id)  # если get не находит объекта - ObjectDoesNotExist
+        try:
+            info = IndexInSubInf.objects.get(id=randomized_id)  # если get не находит объекта - ObjectDoesNotExist
+        except ObjectDoesNotExist:
+            info = IndexInSubInf.objects.get(id=2)
+
         ctx["ist"] = info.ist
 
         if ctx["ist"] is None:
