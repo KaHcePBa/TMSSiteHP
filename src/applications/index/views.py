@@ -2,7 +2,6 @@ import random
 
 from django.views.generic import TemplateView
 from applications.index.models import IndexInSubInf
-from django.core.exceptions import ObjectDoesNotExist
 
 class IndexView(TemplateView):
     template_name = "index/index.html"
@@ -15,8 +14,8 @@ class IndexView(TemplateView):
 
         try:
             info = IndexInSubInf.objects.get(id=randomized_id)  # если get не находит объекта - ObjectDoesNotExist
-        except ObjectDoesNotExist:
-            info = IndexInSubInf.objects.get(id=2)
+        except IndexInSubInf.DoesNotExist:
+            info = None # AttributeError: 'NoneType' object has no attribute 'ist'
 
         ctx["ist"] = info.ist
 
