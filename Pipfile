@@ -9,6 +9,7 @@ coverage = "==4.5.4" # https://github.com/creare-com/podpac/issues/347
 httpie = "*"
 isort = "*"
 pudb = "*"
+codecov = "*"
 
 [packages]
 django = "*"
