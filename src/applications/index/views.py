@@ -17,9 +17,12 @@ class IndexView(TemplateView):
         except IndexInSubInf.DoesNotExist:
             info = None # AttributeError: 'NoneType' object has no attribute 'ist'
 
+        if info is None:
+            return ctx
+
         ctx["ist"] = info.ist
 
-        if ctx["ist"] is None:
-            ctx["ist"] = 'Your database is empty or has null strings. Please update!'
+        # if ctx["ist"] is None:
+        #     ctx["ist"] = 'Your database is empty or has null strings. Please update!'
 
         return ctx
