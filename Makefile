@@ -21,9 +21,9 @@ endif
 MANAGE := ${RUN} python src/manage.py
 
 
-.PHONY: format
-format:
-	${RUN} isort --virtual-env ${VENV} --recursive --apply ${HERE}
+#.PHONY: format
+#format:
+#	${RUN} isort --virtual-env ${VENV} --recursive --apply ${HERE}
 #	${RUN} black ${HERE}
 
 
@@ -86,7 +86,7 @@ test:
 			project \
 
 	${RUN} coverage report
-	${RUN} isort --virtual-env ${VENV} --recursive --check-only ${HERE}
+#	${RUN} isort --virtual-env ${VENV} --recursive --check-only ${HERE}
 #	${RUN} black --check ${HERE}
 
 
