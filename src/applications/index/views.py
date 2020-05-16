@@ -22,7 +22,4 @@ class IndexView(TemplateView):
 
         ctx["ist"] = info.ist
 
-        # if ctx["ist"] is None:
-        #     ctx["ist"] = 'Your database is empty or has null strings. Please update!'
-
         return ctx
