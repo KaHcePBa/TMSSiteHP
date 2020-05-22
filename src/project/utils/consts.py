@@ -7,17 +7,17 @@ AGE_1MONTH = AGE_1DAY * 30
 
 MSQ = "Europe/Minsk"
 
-# SCRIPT_GOOGLE_ANALYTICS = """
-# <!-- Global site tag (gtag.js) - Google Analytics -->
-# <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162140419-1"></script>
-# <script>
-#   window.dataLayer = window.dataLayer || [];
-#   function gtag(){dataLayer.push(arguments);}
-#   gtag('js', new Date());
-#
-#   gtag('config', 'UA-162140419-1');
-# </script>
-# """
+SCRIPT_GOOGLE_ANALYTICS = """
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167459163-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167459163-1');
+</script>
+"""
 
 # SCRIPT_GOOGLE_TAG_MANAGER_HEAD = """
 # <!-- Google Tag Manager -->
