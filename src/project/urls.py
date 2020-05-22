@@ -1,8 +1,14 @@
 from django.contrib import admin
 from django.urls import include, path
 
+from project.views import view_favicon
+
 urlpatterns = [
-    path('admin/', admin.site.urls),  # позволяет входить под админом на свой сайт sakasper.herokuapp.com/admin
+    # --- admin urls ---
+    path('admin/', admin.site.urls),
+    # --- static views ---
+    path("favicon.png", view_favicon, name="favicon"),
+    # --- applications urls ---
     path('', include("applications.index.urls")),
     path('resume/', include("applications.resume.urls")),
     path('projects/', include("applications.projects.urls")),
