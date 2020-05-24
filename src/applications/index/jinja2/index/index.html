@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 
 <head>
+    {% if not debug %}
+        {{ yandex_metrika | safe }}
+        {{ google_analytics | safe }}
+        {{ google_tag_manager.head | safe }}
+    {% endif %}
+
     <meta charset="UTF-8">
     <title>Startpage of personal Kasperovich`s website</title>
 {#    {% block title %}Sergey Kasperovich personal website{% endblock %}#}
@@ -10,11 +16,13 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
           rel="stylesheet">
     <link href="{{ url('favicon') }}" rel="shortcut icon" type="image/png"/>
-
-{#    <link href="{{ static('favicon.ico') }}" rel="shortcut icon" type="image/x-icon"/>#}
 </head>
 
 <body>
+
+{% if not debug %}
+    {{ google_tag_manager_body | safe }}
+{% endif %}
 
 <!-- Sprite -->
 <svg style="display: none;">
