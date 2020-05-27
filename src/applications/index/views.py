@@ -21,5 +21,6 @@ class IndexView(TemplateView):
             return ctx
 
         ctx["ist"] = info.ist
-
         return ctx
+
+
