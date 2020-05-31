@@ -5,6 +5,7 @@
 <head>
     {% if not debug %}
         {{ yandex_metrika | safe }}
+        {{ yandex_metateg_webmaster | safe }}
         {{ google_analytics | safe }}
         {{ google_tag_manager_head | safe }}
     {% endif %}

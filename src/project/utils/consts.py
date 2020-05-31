@@ -58,3 +58,7 @@ SCRIPT_YANDEX_METRIKA = """
 <noscript><div><img src="https://mc.yandex.ru/watch/63553609" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 """
+
+YANDEX_METATEG_WEBMASTER = """
+<meta name="yandex-verification" content="bbb9b5bdde7d4f75" />
+"""
