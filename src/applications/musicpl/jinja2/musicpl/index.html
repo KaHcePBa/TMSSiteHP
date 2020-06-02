@@ -1,8 +1,16 @@
 {#{% extends "base.html" %}#}
 
 <!DOCTYPE html>
-<html>
+
 <head>
+
+    {% if not debug %}
+        {{ yandex_metrika | safe }}
+        {{ yandex_metateg_webmaster | safe }}
+        {{ google_analytics | safe }}
+        {{ google_tag_manager_head | safe }}
+    {% endif %}
+
     <meta charset="UTF-8">
     <title>Playlist YaMusic from Sergey Kasperovich</title>
     <link href="{{ static('css/stylemusicpl.css') }}" rel="stylesheet">
@@ -14,6 +22,9 @@
 
 <body>
 
+    {% if not debug %}
+        {{ google_tag_manager_body | safe }}
+    {% endif %}
 
 <!-- Header -->
 <header class="header">
