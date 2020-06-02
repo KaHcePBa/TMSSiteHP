@@ -20,9 +20,12 @@ test:
   MODE_CACHING: 1
   MODE_DEBUG: 1
   MODE_PROFILING: 0
-  SECRET_KEY: "HHur+(P/2MPQuFg<gS9Sag)p}Rby(8,rV!A(mia`ByaKiRhASBGRfqj^Gber=[!"
+  SECRET_KEY: "secret"
 
 travis:
   DATABASE_URL: "postgresql://postgres@localhost:5432/sa" # файл который идет на GitHab
   DEBUG: true
-  SECRET_KEY: "HHur+(P/2MPQuFg<gS9Sag)p}Rby(8,rV!A(mia`ByaKiRhASBGRfqj^Gber=[!"
+  SECRET_KEY: "secret"
+
+dropbox:
+  DROPBOX_OAUTH2_TOKEN: "secret"
