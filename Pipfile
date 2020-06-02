@@ -18,5 +18,5 @@ dj-database-url = "*"
 dynaconf = {extras = ["yaml"],version = "*"}
 psycopg2 = "*"
 jinja2 = "*"
-celery = "*"
+celery = {extras = ["redis"],version = "*"}
 django-storages = {extras = ["dropbox"],version = "*"}
