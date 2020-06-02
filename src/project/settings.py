@@ -113,3 +113,5 @@ STATIC_ROOT = REPO_DIR / ".static"
 # blog
 # LOGIN_URL = reverse_lazy("onboarding:sign_in")
 LOGIN_REDIRECT_URL = reverse_lazy("blog:all_posts")
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
