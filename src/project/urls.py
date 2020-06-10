@@ -10,7 +10,7 @@ urlpatterns = [
     path("favicon.png", view_favicon, name="favicon"),
     # --- applications urls ---
     path('', include("applications.index.urls")),
-    path('resume/', include("applications.resume.urls")),
+    path('psychedelic/', include("applications.psychedelic.urls")),
     path('projects/', include("applications.projects.urls")),
     path('musicpl/', include("applications.musicpl.urls")),
     path('blog/', include("applications.blog.urls")),
