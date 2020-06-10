@@ -15,14 +15,18 @@
     <link href="{{ static('css/style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&display=swap&subset=cyrillic-ext"
           rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description"
+          content="Персональная страница Касперовича Сергея. Здесь можно познакомиться со мной и с моим творчеством."/>
+    <meta name="google" content="notranslate"/>
     <link href="{{ url('favicon') }}" rel="shortcut icon" type="image/png"/>
 </head>
 
 <body>
 
-    {% if not debug %}
-        {{ google_tag_manager_body | safe }}
-    {% endif %}
+{% if not debug %}
+    {{ google_tag_manager_body | safe }}
+{% endif %}
 
 <!-- Sprite -->
 <svg style="display: none;">
@@ -262,7 +266,9 @@
                 <div>Copyright © Sergey Kasperovich 2020</div>
                 <div>Made with PyCharm & Brackets</div>
                 <div>Powered by Python & Django (ActiveBox HTML Template)</div>
-                <div><b style="color:#e84545">Additional Info:</b> promotional code <b style="color:#e84545">ELEVEN</b> for all car sharing (Anytime, Hello, Везуха)</div>
+                <div><b style="color:#e84545">Additional Info:</b> promotional code <b style="color:#e84545">ELEVEN</b>
+                    for all car sharing (Anytime, Hello, Везуха)
+                </div>
             </div>
         </div>
     </div>
