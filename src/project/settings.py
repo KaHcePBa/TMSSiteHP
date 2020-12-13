@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "applications.index",
-    "applications.resume",
+    "applications.psychedelic",
     "applications.projects",
     "applications.musicpl",
     "applications.blog",
